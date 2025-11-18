@@ -10,6 +10,8 @@ services:
 
     environment:
       - TZ=Asia/Shanghai
+      # NewsNow API配置
+      - NEWSNOW_API_URL=${NEWSNOW_API_URL:-https://newsnow.busiyi.world}
       # 核心配置
       - ENABLE_CRAWLER=${ENABLE_CRAWLER:-}
       - ENABLE_NOTIFICATION=${ENABLE_NOTIFICATION:-}

@@ -451,7 +451,9 @@ class DataFetcher:
             id_value = id_info
             alias = id_value
 
-        url = f"https://newsnow.busiyi.world/api/s?id={id_value}&latest"
+        # Support custom NewsNow API server via environment variable
+        api_base_url = os.getenv('NEWSNOW_API_URL', 'https://newsnow.busiyi.world')
+        url = f"{api_base_url}/api/s?id={id_value}&latest"
 
         proxies = None
         if self.proxy_url:
